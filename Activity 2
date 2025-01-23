@@ -1,0 +1,43 @@
+import React, {useState} from 'react';
+import {Text, StyleSheet} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+
+const TextInANest = () => {
+  const [titleText, setTitleText] = useState("Christian Francisco");
+  const bodyText = 'ang gusto kong pag aralan ngayung semester dahil mahilig ako sa pag eedit is yung flutter and this subject Advance mobile  ';
+
+  const onPressTitle = () => {
+    setTitleText("");
+  };
+
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.baseText}>
+          <Text style={styles.titleText} onPress={onPressTitle}>
+            {titleText}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text numberOfLines={5}>{bodyText}</Text>
+        </Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+};
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  baseText: {
+    fontFamily: 'Cochin',
+    justifyContent: 'center'
+    
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
+export default TextInANest;
