@@ -1,0 +1,41 @@
+import React from 'react';
+import {View, Text, Image, ScrollView, TextInput} from 'react-native';
+
+const App = () => {
+  return (
+    <ScrollView>
+      <Text
+      style={{
+        textAlign: 'center',
+         fontSize: 32,
+         fontWeight: 'bold'
+      }}>Sponge</Text>
+      <View
+        style={{
+          flex: 1,
+          justifyContent:"center",
+          alignItems:"center"
+        }}>
+        <Text>Yellow</Text>
+        <Image
+          source={{
+            uri: 'https://pngimg.com/uploads/spongebob/spongebob_PNG60.png'
+          }}
+          style={{width: 200, height: 200}}
+        />
+      </View
+      >
+      <TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+          textAlign: 'center'
+        }}
+        defaultValue="You can type in me"
+      />
+    </ScrollView>
+  );
+};
+
+export default App;
