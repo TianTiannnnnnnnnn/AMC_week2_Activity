@@ -1,0 +1,45 @@
+import React, {useState} from 'react';
+import {Text, StyleSheet} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+
+const TextInANest = () => {
+  const [titleText, setTitleText] = useState('Christian');
+
+  const bodyText = 'This is not really a bird nest.';
+  <Text style={styles.innerText}> and red</Text>
+  const onPressTitle = () => {
+    setTitleText("Bird's Nest [pressed]");
+  };
+
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.baseText}>
+          <Text style={styles.titleText} onPress={onPressTitle}>
+            {titleText}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text numberOfLines={5}><Text style={{color:'red'}}>
+          I am currently</Text> taking <Text style={{color:'red'}}>Advance mobile</Text> Subject </Text>
+        </Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    
+  },
+  baseText: {
+    fontFamily: 'Cochin',
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
+export default TextInANest;
